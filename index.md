@@ -27,10 +27,10 @@ code: https://github.com/VisualScienceLab-KHU/ParTY
 ### Stage 1. Temporal-aware Vector Quatization
 
 <div class="columns is-vcentered">
-  <div class="column is-7">
+  <div class="column is-6">
     <img src="./static/image/figure2.png" alt="figure2" style="width: 100%;">
   </div>
-  <div class="column is-5">
+  <div class="column is-6">
     Temporal-aware VQ-VAE reduces temporal information loss caused by fixed-window quantization. It first applies Local Temporal Enhancement (LTE), where an MLP-based weighted sum preserves important short-term motion cues within each window. It then applies Global Temporal Enhancement (GTE), where a GCN updates group-level features to capture long-range temporal dependencies. The enhanced features are mapped to codebook tokens, and the same design is used for both full-body and part (arms/legs) streams to provide stable motion tokens for Stage 2.
   </div>
 </div>
@@ -60,4 +60,3 @@ During generation, Holistic-Part Fusion (HPF) continuously injects part tokens i
 <br>
 
 ## BibTeX
-
