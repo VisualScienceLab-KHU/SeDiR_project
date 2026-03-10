@@ -23,19 +23,24 @@ code: https://github.com/VisualScienceLab-KHU/ParTY
 
 <br>
 
-## Architecture
+<h2 style="text-align: center;">Architecture</h2>
 
 ### Stage 1. Temporal-aware Vector Quatization
 
-| Figure | Description |
-|:--|:--|
-| ![Figure2](./static/image/figure2.png) | Temporal-aware VQ-VAE reduces temporal information loss caused by fixed-window quantization. It first applies Local Temporal Enhancement (LTE), where an MLP-based weighted sum preserves important short-term motion cues within each window. It then applies Global Temporal Enhancement (GTE), where a GCN updates group-level features to capture long-range temporal dependencies. The enhanced features are mapped to codebook tokens, and the same design is used for both full-body and part (arms/legs) streams to provide stable motion tokens for Stage 2. |
+<div class="columns is-vcentered">
+  <div class="column is-8">
+    <img src="./static/image/figure2.png" alt="figure2" style="width: 100%;">
+  </div>
+  <div class="column is-4">
+    Temporal-aware VQ-VAE reduces temporal information loss caused by fixed-window quantization. It first applies Local Temporal Enhancement (LTE), where an MLP-based weighted sum preserves important short-term motion cues within each window. It then applies Global Temporal Enhancement (GTE), where a GCN updates group-level features to capture long-range temporal dependencies. The enhanced features are mapped to codebook tokens, and the same design is used for both full-body and part (arms/legs) streams to provide stable motion tokens for Stage 2.
+  </div>
+</div>
 
 ### Stage 2. Part-Guided Motion Synthesis
 
-| |
-|:--:|
-| ![Figure3](./static/image/figure3.png) |
+<p align="center">
+  <img src="./static/image/figure3.png" width="85%" alt="figure3">
+</p>
 
 Stage 2 first applies Part-aware Text Grounding (PTG): a CLIP text embedding is transformed by multiple part-specific MLPs, and a part gate selects the most suitable embedding for each body part. To keep both diversity and semantic consistency, PTG is trained with a contrastive diversity objective and an auxiliary part-text alignment loss.
 Then the Part-Guided Network generates arm/leg tokens autoregressively and fuses them into Part Guidance over short cycles. The holistic transformer uses this guidance to generate full-body tokens, instead of predicting holistic motion alone.
@@ -43,11 +48,11 @@ During generation, Holistic-Part Fusion (HPF) continuously injects part tokens i
 
 <br>
 
-## Visualizations
+<h2 style="text-align: center;">Visualizations</h2>
 
-| |
-|:--:|
-| ![Figure4](./static/image/figure4.png) |
+<p align="center">
+  <img src="./static/image/figure4.png" width="85%" alt="figure4">
+</p>
 
 **Part-level evaluation.** Following the qualitative analysis in Sec. 4.3, Fig. 4 shows that ParTY better matches fine-grained part instructions (e.g., specific arm/leg actions) than both holistic and prior part-wise baselines. This observation is consistent with the part-level metrics: ParTY improves part-wise text-motion alignment and motion quality for both arms and legs, indicating that part semantics are preserved during generation rather than diluted in full-body synthesis.
 
