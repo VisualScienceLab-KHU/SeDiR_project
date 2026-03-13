@@ -4,8 +4,8 @@
   </a>
 </p>
 
-## 🏃‍♂️ ParTY Project Page
-This repository contains the project page for **"ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis"**.
+## 🏃‍♂️ SeDiR Project Page
+This repository contains the project page for **"A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection"**.
 
 ## Acknowledgement
 The website template is adapted from  
