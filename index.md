@@ -7,7 +7,7 @@ affiliations:
     Kyung Hee University
 arxiv: https://arxiv.org/pdf/2603.09611 # change to CVF
 paper: https://arxiv.org/pdf/2603.09611 # change to CVF
-code: https://github.com/VisualScienceLab-KHU/ParTY # change to CVF
+# code: https://github.com/VisualScienceLab-KHU/ParTY # change to CVF
 ---
 
 ![Figure1](./static/image/figure1.png)
