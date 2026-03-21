@@ -7,7 +7,7 @@ affiliations:
     Kyung Hee University
 arxiv: https://arxiv.org/pdf/2603.09611 # change to CVF
 paper: https://arxiv.org/pdf/2603.09611 # change to CVF
-# code: https://github.com/VisualScienceLab-KHU/ParTY # change to CVF
+code: https://github.com/VisualScienceLab-KHU/SeDiR # change to CVF
 ---
 
 ![Figure1](./static/image/figure1.png)
@@ -16,7 +16,7 @@ paper: https://arxiv.org/pdf/2603.09611 # change to CVF
   <div class="column is-four-fifths">
     <h2>Abstract</h2>
     <div class="content has-text-justified">
-      Text-to-motion synthesis aims to generate natural and expressive human motions from textual descriptions. While existing approaches primarily focus on generating holistic motions from text descriptions, they struggle to accurately reflect actions involving specific body parts. Recent part-wise motion generation methods attempt to resolve this but face two critical limitations: (i) they lack explicit mechanisms for aligning textual semantics with individual body parts, and (ii) they often generate incoherent full-body motions due to integrating independently generated part motions. To overcome these issues and resolve the fundamental trade-off in existing methods, we propose <b>ParTY</b>, a novel framework that enhances part expressiveness while generating coherent full-body motions. ParTY comprises: <b>(1) Part-Guided Network</b>, which first generates part motions to obtain part guidance, then uses it to generate holistic motions; <b>(2) Part-aware Text Grounding</b>, which diversely transforms text embeddings and appropriately aligns them with each body part; and <b>(3) Holistic-Part Fusion</b>, which adaptively fuses holistic motions and part motions. Extensive experiments, including <b>part-level</b> and <b>coherence-level</b> evaluations, demonstrate that ParTY achieves substantial improvements over previous methods.
+      3D anomaly detection targets the detection and localization of defects in 3D point clouds trained solely on normal data. While a unified model improves scalability by learning across multiple categories, it often suffers from <b>Inter-Category Entanglement (ICE)</b>—where latent features from different categories overlap, causing the model to adopt incorrect semantic priors during reconstruction and ultimately yielding unreliable anomaly scores. To address this issue, we propose the <b>Semantically Disentangled Unified Model</b> for 3D Anomaly Detection, which reconstructs features conditioned on disentangled semantic representations. Our framework consists of three key components: (i) <b>Coarse-to-Fine Global Tokenization</b> for forming instance-level semantic identity, (ii) <b>Category-Conditioned Contrastive Learning</b> for disentangling category semantics, and (iii) a <b>Geometry-Guided Decoder</b> for semantically consistent reconstruction. Extensive experiments on Real3D-AD and Anomaly-ShapeNet demonstrate that our method achieves state-of-the-art for both unified and category-specific models, improving object-level AUROC by 2.8% and 9.1%, respectively, while enhancing the reliability of unified 3D anomaly detection. 
     </div>
   </div>
 </div>
