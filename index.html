@@ -256,7 +256,7 @@
 
         <hr class="thin-hr">
 
-        <div class="columns is-variable is-6">
+        <div class="columns is-variable is-6 is-vcentered">
           <div class="column">
             <h3 class="title is-5">GGD: Geometry-Guided Decoder</h3>
             <figure class="image">
@@ -264,9 +264,7 @@
             </figure>
           </div>
 
-          <div class="column">
-            <h3 class="title is-5"> </h3>
-
+          <div class="column is-flex is-align-items-center">
             <div class="content has-text-justified">
               <p>
                 The Geometry-Guided Decoder reconstructs features using both disentangled semantic priors and local geometric evidence. Instead of decoding blindly from latent features, the decoder is softly biased toward category-consistent reconstruction pathways. This helps ensure that geometry is reconstructed according to the correct semantic identity, leading to more stable anomaly scores and more precise localization.
