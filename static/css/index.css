@@ -18,15 +18,15 @@ body {
 /* Title/authors font */
 .publication-title,
 .publication-authors {
-  color: #fc819e;
   font-family: 'Google Sans', sans-serif;
 }
 .publication-authors a {
   color: #fc819e !important;
+  text-decoration: none;
 }
 .publication-authors a:hover {
-  text-decoration: underline;
   color: #fc819e;
+  text-decoration: underline;
 }
 
 /* Layout tuning */
