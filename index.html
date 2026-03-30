@@ -47,12 +47,13 @@
         <div class="column has-text-centered">
 
           <h1 class="title is-1 publication-title">
-            A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
+            A Semantically Disentangled Unified Model<br>
+            for Multi-category 3D Anomaly Detection
           </h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://jagged-shoemaker-d6c.notion.site/SuYeon-Kim-262048ede99680799d03f7b32004d93d">SuYeon Kim</a>,
+              <a href="https://spoiuy3.github.io/">SuYeon Kim</a>,
             </span>
             <span class="author-block">
               <a href="https://wklee0607.github.io/">Wongyu Lee</a>,
@@ -100,7 +101,8 @@
 
           <!-- Balanced tagline (MoTAR + CORE), with CORE weight in wording (no highlight here) -->
           <p class="tagline">
-            SeDiR resolves Inter-Category Entanglement in unified 3D anomaly detection by learning category-aware semantics before reconstruction and guiding reconstruction with geometric evidence.
+            SeDiR resolves <b>Inter-Category Entanglement</b> in unified 3D anomaly detection<br>
+            by learning category-aware semantics before reconstruction and guiding reconstruction with geometric evidence.
           </p>
 
         </div>
@@ -122,7 +124,7 @@
           <img class="figure-wide" src="./static/images/figure1.png" alt="SeDiR teaser">
         </figure>
         <p class="figure-caption">
-          Teaser: an overview of SeDiR. Category-specific models require a separate model for each class, while naive unified models often suffer from inter-category feature entanglement. SeDiR addresses this problem by aggregating coarse-to-fine geometric cues into category-aware global features, disentangling them via Category-Conditioned Contrastive Learning, and guiding reconstruction with input geometry.
+          Teaser: an overview of <b>SeDiR</b>. Category-specific models require a separate model for each class, while naive unified models often suffer from inter-category feature entanglement. SeDiR addresses this problem by aggregating coarse-to-fine geometric cues into category-aware global features, disentangling them via Category-Conditioned Contrastive Learning, and guiding reconstruction with input geometry.
         </p>
       </div>
     </div>
@@ -133,7 +135,7 @@
 <!-- =========================
      ABSTRACT
      ========================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -152,7 +154,7 @@
 <!-- =========================
      CORE CONTRIBUTIONS
      ========================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -182,7 +184,7 @@
 <!-- =========================
      MOTIVATION / PARADIGM FIGURE (PDF Fig.1)
      ========================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -195,7 +197,7 @@
 
           <!-- (1/2) only: highlight a single key sentence about CORE -->
           <p class="note-box note-core">
-            <span class="hl-core"><b>Key point:</b> the central issue is not simply reconstructing anomalies, but reconstructing before understanding what is being reconstructed. SeDiR resolves this by establishing semantic identity first and reconstructing second.</span>
+            <span class="hl-core"><b>Key point:</b> the central issue is not simply reconstructing anomalies, but reconstructing before <b>understanding what is being reconstructed</b>. SeDiR resolves this by establishing semantic identity first and reconstructing second.</span>
           </p>
         </div>
       </div>
@@ -206,7 +208,7 @@
 <!-- =========================
      MOTIVATION / PARADIGM FIGURE (PDF Fig.1)
      ========================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -232,7 +234,7 @@
 <!-- =========================
      PROPOSED METHOD
      ========================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -240,7 +242,7 @@
 
         <div class="content has-text-justified">
           <p>
-            SeDiR follows a simple principle: understand what to reconstruct before deciding how to reconstruct. Given an input point cloud, SeDiR first extracts multi-resolution geometric features and aggregates them into a category-aware global token. It then disentangles category semantics in the latent space and reconstructs features using both semantic priors and geometry-guided cues. This design enables semantically aligned and geometrically consistent reconstruction in the unified multi-category setting.
+            SeDiR follows a simple principle: <b>understand what to reconstruct</b> before deciding how to reconstruct. Given an input point cloud, SeDiR first extracts multi-resolution geometric features and aggregates them into a category-aware global token. It then disentangles category semantics in the latent space and reconstructs features using both semantic priors and geometry-guided cues. This design enables semantically aligned and geometrically consistent reconstruction in the unified multi-category setting.
           </p>
         </div>
 
@@ -282,7 +284,7 @@
 <!-- =========================
      QUALITATIVE (Fig.5)
      ========================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -310,7 +312,7 @@
 <!-- =========================
      CITATION
      ========================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
