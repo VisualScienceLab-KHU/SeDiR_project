@@ -51,9 +51,15 @@
           </h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">SuYeon Kim,</span>
-            <span class="author-block">Wongyu Lee,</span>
-            <span class="author-block">MyeongAh Cho†</span>
+            <span class="author-block">
+              <a href="https://jagged-shoemaker-d6c.notion.site/SuYeon-Kim-262048ede99680799d03f7b32004d93d">SuYeon Kim</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://wklee0607.github.io/">Wongyu Lee</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://myeongahcho.netlify.app/">MyeongAh Cho†</a>
+            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -70,12 +76,12 @@
                 <a href="https://arxiv.org/abs/2603.25159"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-book-open"></i></span>
-                  <span>Paper</span>
+                  <span>ArXiv</span>
                 </a>
               </span>
 
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2603.25159"
+                <a href="https://arxiv.org/pdf/2603.25159"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
@@ -200,7 +206,7 @@
 <!-- =========================
      MOTIVATION / PARADIGM FIGURE (PDF Fig.1)
      ========================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -210,12 +216,6 @@
           <p>
             We analyze the latent space of a unified baseline and observe that semantically different categories form heavily overlapping feature clusters rather than distinct semantic manifolds. In particular, categories such as chicken, duck, and gemstone exhibit clear entanglement in the latent space. Furthermore, normal samples with lower category classification scores tend to show higher reconstruction errors, indicating that incorrect semantic understanding leads directly to incorrect reconstruction. These observations confirm that ICE is not a random side effect, but a systematic bottleneck in unified 3D anomaly detection.
           </p>
-
-          <!-- (1/2) only: highlight a single key sentence about CORE -->
-          <p class="note-box note-core">
-            <span class="hl-core"><b>Key point:</b> the central issue is not simply reconstructing anomalies, but reconstructing before understanding what is being reconstructed. SeDiR resolves this by establishing semantic identity first and reconstructing second.</span>
-          </p>
-        </div>
 
         <figure class="image">
           <img class="figure-wide" src="./static/images/figure2.png" alt="WVAD paradigms comparison">
@@ -232,7 +232,7 @@
 <!-- =========================
      PROPOSED METHOD
      ========================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -256,33 +256,6 @@
 
         <div class="columns is-variable is-6">
           <div class="column">
-            <h3 class="title is-5">CFGT: Coarse-to-Fine Global Tokenization</h3>
-            <div class="content has-text-justified">
-              <ul>
-                <li>Encodes multi-resolution geometric information.</li>
-                <li>Forms a category-aware global token.</li>
-                <li>Improves semantic identity formation before reconstruction.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="column">
-            <h3 class="title is-5">C3L: Category-Conditioned Contrastive Learning</h3>
-
-            <div class="content has-text-justified">
-              <ul>
-                <li>Pulls same-category features together.</li>
-                <li>Pushes different-category features apart.</li>
-                <li>Reduces latent entanglement in unified 3D-AD.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <hr class="thin-hr">
-
-        <div class="columns is-variable is-6">
-          <div class="column">
             <h3 class="title is-5">GGD: Geometry-Guided Decoder</h3>
             <figure class="image">
               <img src="./static/images/figure4.png" alt="GGD overview">
@@ -290,7 +263,7 @@
           </div>
 
           <div class="column">
-            <h3 class="title is-5">CORE: Category-Oriented Refinement</h3>
+            <h3 class="title is-5"> </h3>
 
             <div class="content has-text-justified">
               <p>
@@ -343,7 +316,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Citation</h2>
         <div class="content">
-<pre><code>@article{kim2026semantically, title = {A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection}, author = {Kim, SuYeon and Lee, Wongyu and Cho, MyeongAh}, journal = {arXiv preprint arXiv:2603.25159}, year = {2026} }</code></pre>
+<pre><code>@article{kim2026semantically, 
+  title = {A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection}, 
+  author = {Kim, SuYeon and Lee, Wongyu and Cho, MyeongAh}, 
+  journal = {arXiv preprint arXiv:2603.25159}, 
+  year = {2026} 
+}</code></pre>
         </div>
       </div>
     </div>
