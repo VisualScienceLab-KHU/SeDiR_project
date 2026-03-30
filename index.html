@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection.">
+  <meta name="keywords" content="3D Anomaly Detection, 3D Point Cloud, Semantically Disentangled Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<!-- =========================
+     HERO
+     ========================= -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">
+            A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">SuYeon Kim,</span>
+            <span class="author-block">Wongyu Lee,</span>
+            <span class="author-block">MyeongAh Cho†</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Kyung Hee University, Republic of Korea</span>
+          </div>
+
+          <div class="is-size-6" style="margin-top: 0.35rem;">
+            †Corresponding Author
+          </div>
+
+          <div class="column has-text-centered" style="margin-top: 0.75rem;">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.25159"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-book-open"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.25159"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/VisualScienceLab-KHU/SeDiR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <!-- Balanced tagline (MoTAR + CORE), with CORE weight in wording (no highlight here) -->
+          <p class="tagline">
+            SeDiR resolves Inter-Category Entanglement in unified 3D anomaly detection by learning category-aware semantics before reconstruction and guiding reconstruction with geometric evidence.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     TEASER / FRAMEWORK (temporary: use Fig.2; later: teaser gif)
+     ========================= -->
+<section class="section section-tight teaser-hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure class="image">
+          <!-- TEMP now: teaser.jpeg (Figure 2). LATER: change to teaser.gif -->
+          <img class="figure-wide" src="./static/images/figure1.png" alt="SeDiR teaser">
+        </figure>
+        <p class="figure-caption">
+          Teaser: an overview of SeDiR. Category-specific models require a separate model for each class, while naive unified models often suffer from inter-category feature entanglement. SeDiR addresses this problem by aggregating coarse-to-fine geometric cues into category-aware global features, disentangling them via Category-Conditioned Contrastive Learning, and guiding reconstruction with input geometry.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     ABSTRACT
+     ========================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            3D anomaly detection targets the detection and localization of defects in 3D point clouds trained solely on normal data. While a unified model improves scalability by learning across multiple categories, it often suffers from <b>Inter-Category Entanglement (ICE)</b>—where latent features from different categories overlap, causing the model to adopt incorrect semantic priors during reconstruction and ultimately yielding unreliable anomaly scores. To address this issue, we propose the <b>Semantically Disentangled Unified Model</b> for 3D Anomaly Detection, which reconstructs features conditioned on disentangled semantic representations. Our framework consists of three key components: (i) <b>Coarse-to-Fine Global Tokenization</b> for forming instance-level semantic identity, (ii) <b>Category-Conditioned Contrastive Learning</b> for disentangling category semantics, and (iii) a <b>Geometry-Guided Decoder</b> for semantically consistent reconstruction. Extensive experiments on Real3D-AD and Anomaly-ShapeNet demonstrate that our method achieves state-of-the-art for both unified and category-specific models, improving object-level AUROC by 2.8% and 9.1%, respectively, while enhancing the reliability of unified 3D anomaly detection.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     CORE CONTRIBUTIONS
+     ========================= -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Core Contributions</h2>
+        <div class="content">
+          <ol>
+            <li>
+              We identify <b>Inter-Category Entanglement (ICE)</b> as a fundamental bottleneck of unified 3D anomaly detection and reformulate unified 3D-AD as semantically conditioned reconstruction.
+            </li>
+            <li>
+              We propose <b>Coarse-to-Fine Global Tokenization (CFGT)</b>, which aggregates multi-resolution geometric cues into a category-aware global representation for reliable semantic identity formation.
+            </li>
+            <li>
+              We introduce <b>Category-Conditioned Contrastive Learning (C3L)</b> and a <b>Geometry-Guided Decoder (GGD)</b> to disentangle category semantics and reconstruct features with both semantic and geometric consistency.
+            </li>
+            <li>
+              Extensive experiments on Real3D-AD and Anomaly-ShapeNet demonstrate strong gains over prior methods and validate the effectiveness of semantically disentangled reconstruction in unified 3D anomaly detection.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     MOTIVATION / PARADIGM FIGURE (PDF Fig.1)
+     ========================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why Semantically Disentangled Unified 3D-AD?</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Prior 3D anomaly detection methods are largely category-specific, requiring a separate model for each object class. Although recent unified methods improve scalability by training a single model across multiple categories, they often fail to preserve semantic identity in the latent space. As a result, the model may reconstruct an object under the wrong category prior, even when the input is normal. SeDiR addresses this limitation by explicitly disentangling category-level semantics before reconstruction and by conditioning reconstruction on both semantic and geometric priors.
+          </p>
+
+          <!-- (1/2) only: highlight a single key sentence about CORE -->
+          <p class="note-box note-core">
+            <span class="hl-core"><b>Key point:</b> the central issue is not simply reconstructing anomalies, but reconstructing before understanding what is being reconstructed. SeDiR resolves this by establishing semantic identity first and reconstructing second.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     MOTIVATION / PARADIGM FIGURE (PDF Fig.1)
+     ========================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why Unified 3D-AD Fails: Inter-Category Entanglement</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We analyze the latent space of a unified baseline and observe that semantically different categories form heavily overlapping feature clusters rather than distinct semantic manifolds. In particular, categories such as chicken, duck, and gemstone exhibit clear entanglement in the latent space. Furthermore, normal samples with lower category classification scores tend to show higher reconstruction errors, indicating that incorrect semantic understanding leads directly to incorrect reconstruction. These observations confirm that ICE is not a random side effect, but a systematic bottleneck in unified 3D anomaly detection.
+          </p>
+
+          <!-- (1/2) only: highlight a single key sentence about CORE -->
+          <p class="note-box note-core">
+            <span class="hl-core"><b>Key point:</b> the central issue is not simply reconstructing anomalies, but reconstructing before understanding what is being reconstructed. SeDiR resolves this by establishing semantic identity first and reconstructing second.</span>
+          </p>
+        </div>
+
+        <figure class="image">
+          <img class="figure-wide" src="./static/images/figure2.png" alt="WVAD paradigms comparison">
+        </figure>
+        <p class="figure-caption">
+          T-SNE visualization and quantitative analysis of semantic disentanglement. Compared with MC3D-AD, SeDiR forms better-separated category-aware manifolds, improves category classification confidence, and reduces normal reconstruction error.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     PROPOSED METHOD
+     ========================= -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Proposed Method</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            SeDiR follows a simple principle: understand what to reconstruct before deciding how to reconstruct. Given an input point cloud, SeDiR first extracts multi-resolution geometric features and aggregates them into a category-aware global token. It then disentangles category semantics in the latent space and reconstructs features using both semantic priors and geometry-guided cues. This design enables semantically aligned and geometrically consistent reconstruction in the unified multi-category setting.
+          </p>
+        </div>
+
+        <!-- Keep this figure even if teaser is currently Fig.2 -->
+        <figure class="image">
+          <img class="figure-wide" src="./static/images/figure3.png" alt="Overall architecture of SeDiR">
+        </figure>
+        <p class="figure-caption">
+          Overall architecture of SeDiR. Our framework consists of two stages: Semantically Disentangled Representation Learning and Semantically Disentangled Reconstruction. CFGT forms a category-aware global token from multi-resolution geometric features, C3L disentangles latent semantics, and GGD reconstructs the object conditioned on both semantic and geometric priors.
+        </p>
+
+        <hr class="thin-hr">
+
+        <div class="columns is-variable is-6">
+          <div class="column">
+            <h3 class="title is-5">CFGT: Coarse-to-Fine Global Tokenization</h3>
+            <div class="content has-text-justified">
+              <ul>
+                <li>Encodes multi-resolution geometric information.</li>
+                <li>Forms a category-aware global token.</li>
+                <li>Improves semantic identity formation before reconstruction.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column">
+            <h3 class="title is-5">C3L: Category-Conditioned Contrastive Learning</h3>
+
+            <div class="content has-text-justified">
+              <ul>
+                <li>Pulls same-category features together.</li>
+                <li>Pushes different-category features apart.</li>
+                <li>Reduces latent entanglement in unified 3D-AD.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="thin-hr">
+
+        <div class="columns is-variable is-6">
+          <div class="column">
+            <h3 class="title is-5">GGD: Geometry-Guided Decoder</h3>
+            <figure class="image">
+              <img src="./static/images/figure4.png" alt="GGD overview">
+            </figure>
+          </div>
+
+          <div class="column">
+            <h3 class="title is-5">CORE: Category-Oriented Refinement</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                The Geometry-Guided Decoder reconstructs features using both disentangled semantic priors and local geometric evidence. Instead of decoding blindly from latent features, the decoder is softly biased toward category-consistent reconstruction pathways. This helps ensure that geometry is reconstructed according to the correct semantic identity, leading to more stable anomaly scores and more precise localization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     QUALITATIVE (Fig.5)
+     ========================= -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            SeDiR produces more semantically consistent and spatially precise anomaly localization across diverse categories. Compared with a previous unified model (MC3D-AD), it better highlights true anomalous regions while reducing false responses on normal surfaces. These qualitative results support the claim that disentangling semantic identity before reconstruction leads to more reliable anomaly detection and localization.
+          </p>
+        </div>
+
+        <figure class="image">
+          <img class="figure-wide" src="./static/images/figure5.png" alt="Qualitative Results">
+        </figure>
+        <p class="figure-caption">
+          Qualitative comparison between MC3D-AD and SeDiR. SeDiR provides more accurate and complete localization by reconstructing features under the correct semantic prior.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     CITATION
+     ========================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Citation</h2>
+        <div class="content">
+<pre><code>@article{kim2026semantically, title = {A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection}, author = {Kim, SuYeon and Lee, Wongyu and Cho, MyeongAh}, journal = {arXiv preprint arXiv:2603.25159}, year = {2026} }</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p class="is-size-7">
+      © 2026 SeDiR Project Page.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
